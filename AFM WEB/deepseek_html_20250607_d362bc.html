@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abotaleb Medicine - Medical Student Resources</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <div class="logo-container">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Alexandria_University_logo.svg/1200px-Alexandria_University_logo.svg.png" alt="Alexandria Faculty of Medicine" class="university-logo">
+                <h1>Abotaleb Medicine</h1>
+            </div>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#subjects">Subjects</a></li>
+                    <li><a href="#resources">Resources</a></li>
+                    <li><a href="#diagrams">Diagrams</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="hamburger">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section id="home" class="hero">
+            <div class="hero-content">
+                <h2>Comprehensive Medical Resources</h2>
+                <p>Your one-stop platform for anatomy, physiology, histology, biochemistry, pathology, and pharmacology resources</p>
+                <button class="cta-button">Explore Resources</button>
+            </div>
+            <div class="hero-icons">
+                <i class="fas fa-heartbeat"></i>
+                <i class="fas fa-brain"></i>
+                <i class="fas fa-dna"></i>
+                <i class="fas fa-book-medical"></i>
+            </div>
+        </section>
+
+        <section id="subjects" class="subjects-section">
+            <h2><i class="fas fa-book-open"></i> Medical Subjects</h2>
+            <div class="subjects-grid">
+                <div class="subject-card" id="anatomy">
+                    <i class="fas fa-bone"></i>
+                    <h3>Anatomy</h3>
+                    <p>Detailed anatomical structures and systems</p>
+                    <button class="subject-btn">Explore</button>
+                </div>
+                <div class="subject-card" id="physio">
+                    <i class="fas fa-lungs"></i>
+                    <h3>Physiology</h3>
+                    <p>Body functions and mechanisms</p>
+                    <button class="subject-btn">Explore</button>
+                </div>
+                <div class="subject-card" id="histology">
+                    <i class="fas fa-microscope"></i>
+                    <h3>Histology</h3>
+                    <p>Tissue structures and microscopy</p>
+                    <button class="subject-btn">Explore</button>
+                </div>
+                <div class="subject-card" id="biochem">
+                    <i class="fas fa-atom"></i>
+                    <h3>Biochemistry</h3>
+                    <p>Molecular processes and pathways</p>
+                    <button class="subject-btn">Explore</button>
+                </div>
+                <div class="subject-card" id="pathology">
+                    <i class="fas fa-virus"></i>
+                    <h3>Pathology</h3>
+                    <p>Disease processes and diagnostics</p>
+                    <button class="subject-btn">Explore</button>
+                </div>
+                <div class="subject-card" id="pharmacology">
+                    <i class="fas fa-pills"></i>
+                    <h3>Pharmacology</h3>
+                    <p>Drug actions and therapeutics</p>
+                    <button class="subject-btn">Explore</button>
+                </div>
+            </div>
+        </section>
+
+        <section id="resources" class="resources-section">
+            <h2><i class="fas fa-book"></i> Study Resources</h2>
+            <div class="resource-upload">
+                <h3>Upload Resources</h3>
+                <form id="uploadForm">
+                    <input type="file" id="resourceFile" multiple>
+                    <button type="submit" class="upload-btn"><i class="fas fa-cloud-upload-alt"></i> Upload</button>
+                </form>
+            </div>
+            <div class="resource-list">
+                <h3>Available Resources</h3>
+                <div class="resource-filters">
+                    <button class="filter-btn active" data-filter="all">All</button>
+                    <button class="filter-btn" data-filter="book">Books</button>
+                    <button class="filter-btn" data-filter="notes">Notes</button>
+                    <button class="filter-btn" data-filter="video">Videos</button>
+                </div>
+                <div id="resourcesContainer" class="resources-container">
+                    <!-- Resources will be added dynamically -->
+                </div>
+            </div>
+        </section>
+
+        <section id="diagrams" class="diagrams-section">
+            <h2><i class="fas fa-chart-area"></i> Medical Diagrams</h2>
+            <div class="diagram-controls">
+                <div class="search-box">
+                    <input type="text" placeholder="Search diagrams..." id="diagramSearch">
+                    <i class="fas fa-search"></i>
+                </div>
+                <select id="diagramFilter">
+                    <option value="all">All Systems</option>
+                    <option value="cardiovascular">Cardiovascular</option>
+                    <option value="nervous">Nervous</option>
+                    <option value="respiratory">Respiratory</option>
+                    <option value="digestive">Digestive</option>
+                    <option value="musculoskeletal">Musculoskeletal</option>
+                </select>
+            </div>
+            <div class="diagrams-grid">
+                <!-- Diagrams will be added dynamically -->
+            </div>
+            <div class="diagram-modal" id="diagramModal">
+                <span class="close-modal">&times;</span>
+                <img class="modal-content" id="modalDiagram">
+                <div id="diagramCaption"></div>
+            </div>
+        </section>
+    </main>
+
+    <footer id="contact">
+        <div class="footer-content">
+            <div class="footer-section about">
+                <h3>About Abotaleb Medicine</h3>
+                <p>A comprehensive resource platform for medical students at Alexandria Faculty of Medicine.</p>
+                <div class="socials">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+            <div class="footer-section links">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#subjects">Subjects</a></li>
+                    <li><a href="#resources">Resources</a></li>
+                    <li><a href="#diagrams">Diagrams</a></li>
+                </ul>
+            </div>
+            <div class="footer-section contact">
+                <h3>Contact Us</h3>
+                <p><i class="fas fa-envelope"></i> contact@abotalebmedicine.com</p>
+                <p><i class="fas fa-phone"></i> +20 XXX XXX XXXX</p>
+                <p><i class="fas fa-map-marker-alt"></i> Alexandria Faculty of Medicine, Egypt</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2023 Abotaleb Medicine. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
